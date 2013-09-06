@@ -120,7 +120,7 @@
 
 			this.layers.push({name: name, obj: tilemap});
 
-			return this;
+			return tilemap;
 		},
 
 		insertTilemap: function (name, tileDescription, animationList, options) {
@@ -130,7 +130,7 @@
 
 			this.layers.unshift({name: name, obj: tilemap});
 
-			return this;
+			return tilemap;
 		}
 	});
 }(jQuery, friGame));
