@@ -47,7 +47,7 @@
 				animation_options,
 				sprite_options,
 				sprite_name,
-				width,
+				sprite_obj,
 				row = 0,
 				col = 0,
 				left = 0,
@@ -71,7 +71,7 @@
 			// }
 
 			// sprite_name
-			// name + '_' + col + '_' + row
+			// name + '_' + row + '_' + col
 
 			if (this.options) {
 				my_options = this.options;
@@ -80,8 +80,7 @@
 				this.options = my_options;
 			}
 
-			width = sizex * tileWidth;
-			new_options.width = width;
+			new_options.width = sizex * tileWidth;
 			new_options.height = sizey * tileHeight;
 
 			fg.PSpriteGroup.init.call(this, name, new_options, parent);
@@ -93,9 +92,14 @@
 					sprite_options.left = left;
 					sprite_options.top = top;
 
-					sprite_name = [name, col, row].join('_');
+					sprite_name = [name, row, col].join('_');
 
 					this.addSprite(sprite_name, sprite_options);
+
+					if (animation_options.createCallback) {
+						sprite_obj = fg.s[sprite_name];
+						animation_options.createCallback.call(sprite_obj, sprite_obj);
+					}
 				}
 
 				left += tileWidth;
