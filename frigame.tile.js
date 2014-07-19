@@ -1,4 +1,4 @@
-/*global jQuery, friGame */
+/*global friGame */
 /*jslint white: true, browser: true */
 
 // Copyright (c) 2011-2014 Franco Bugnano
@@ -24,7 +24,7 @@
 // Uses ideas and APIs inspired by:
 // gameQuery Copyright (c) 2008 Selim Arsever (gamequery.onaluf.org), licensed under the MIT
 
-(function ($, fg) {
+(function (fg) {
 	'use strict';
 
 	// ******************************************************************** //
@@ -34,7 +34,7 @@
 	// ******************************************************************** //
 
 	fg.PTilemap = Object.create(fg.PSpriteGroup);
-	$.extend(fg.PTilemap, {
+	fg.extend(fg.PTilemap, {
 		init: function (name, tileDescription, animationList, options, parent) {
 			var
 				my_options,
@@ -117,7 +117,7 @@
 
 	fg.Tilemap = fg.Maker(fg.PTilemap);
 
-	$.extend(fg.PSpriteGroup, {
+	fg.extend(fg.PSpriteGroup, {
 		addTilemap: function (name, tileDescription, animationList, options) {
 			var
 				tilemap = fg.Tilemap(name, tileDescription, animationList, options, this.name)
@@ -138,5 +138,5 @@
 			return tilemap;
 		}
 	});
-}(jQuery, friGame));
+}(friGame));
 
