@@ -124,6 +124,7 @@
 			;
 
 			this.layers.push({name: name, obj: tilemap});
+			this.updateList.push({name: name, obj: tilemap});
 
 			return tilemap;
 		},
@@ -134,6 +135,7 @@
 			;
 
 			this.layers.unshift({name: name, obj: tilemap});
+			this.updateList.unshift({name: name, obj: tilemap});
 
 			return tilemap;
 		}
