@@ -93,7 +93,7 @@
 					sprite_options.left = left;
 					sprite_options.top = top;
 
-					sprite_name = [name, row, col].join('_');
+					sprite_name = name + '_' + row + '_' + col;
 
 					this.addSprite(sprite_name, sprite_options);
 
