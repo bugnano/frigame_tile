@@ -1,7 +1,7 @@
 /*global friGame */
-/*jslint white: true, browser: true */
+/*jshint bitwise: true, curly: true, eqeqeq: true, esversion: 3, forin: true, freeze: true, funcscope: true, futurehostile: true, iterator: true, latedef: true, noarg: true, nocomma: true, nonbsp: true, nonew: true, notypeof: false, shadow: outer, singleGroups: false, strict: true, undef: true, unused: true, varstmt: false, eqnull: false, plusplus: true, browser: true, laxbreak: true, laxcomma: true */
 
-// Copyright (c) 2011-2014 Franco Bugnano
+// Copyright (c) 2011-2017 Franco Bugnano
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -124,7 +124,8 @@
 			;
 
 			this.layers.push({name: name, obj: tilemap});
-			this.updateList.push({name: name, obj: tilemap});
+
+			this.checkUpdate();
 
 			return tilemap;
 		},
@@ -135,7 +136,8 @@
 			;
 
 			this.layers.unshift({name: name, obj: tilemap});
-			this.updateList.unshift({name: name, obj: tilemap});
+
+			this.checkUpdate();
 
 			return tilemap;
 		}
